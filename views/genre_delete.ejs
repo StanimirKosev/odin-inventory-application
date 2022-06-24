@@ -9,7 +9,7 @@
   </head>
   <body>
     <% include _sidebar-nav %>
-    <div>
+    <div class="main">
       <h1><%= title %>: <%= genre.name %></h1>
       <% if (genre_books.length) {%>
       <p>
@@ -22,7 +22,7 @@
       <dl>
         <%genre_books.forEach(book => {%>
         <dt><a href="<%= book.url %>"><%= book.title %></a></dt>
-        <dd><%= book.summary %></dd>
+        <dd class="genre-books"><%= book.summary %></dd>
         <%})%>
       </dl>
       <%} else {%>

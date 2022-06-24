@@ -1,14 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
 }
 
-a {
-  color: #00b7ff;
+.sidebar-nav {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style-type: none;
+  flex: 0.15;
 }
 
-.sidebar-nav {
-  margin-top: 20px;
+.sidebar-nav > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-nav > div > * {
+  padding: 7px;
+}
+
+a {
+  color: #000080;
+}
+
+.main {
+  display: flex;
+  flex: 0.85;
+  flex-direction: column;
+  margin-top: 90px;
+  padding-right: 100px;
+}
+
+.main > * {
+  padding: 7px 0;
+}
+
+.index-ul,
+.book-list-ul,
+.genre-list-ul {
+  padding: 20px;
+}
+
+.book-list-ul > *,
+.genre-list-ul > * {
+  padding: 7px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  font-size: 17px;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid grey;
+  width: 20%;
+  margin-bottom: 15px;
+}
+
+.genre-list-form {
+  display: flex;
   padding: 0;
+}
+
+.genre-list-form > * {
+  padding-right: 7px;
+  padding-bottom: 14px;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  width: auto;
+}
+
+button {
+  width: 100px;
+  padding: 7px;
+  cursor: pointer;
+  background-color: #5e5ef5;
+  color: white;
+  border-radius: 6px;
+  border: 1px solid #5e5ef5;
+  font-size: inherit;
+}
+button:hover {
+  background-color: #4b4bf5;
+}
+
+hr {
+  width: 80%;
+}
+
+.hr-book {
+  padding: 0;
+}
+
+.genre-books {
+  padding-bottom: 10px;
 }

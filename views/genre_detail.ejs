@@ -9,19 +9,25 @@
   </head>
   <body>
     <% include _sidebar-nav %>
-    <div>
+    <div class="main">
       <h1><%= genre.name %></h1>
       <p><%= genre.description %></p>
+      <% if (genre_books.length) {%>
       <h4>Books</h4>
       <dl>
         <% genre_books.forEach(book => {%>
-        <dt><a href="<%= book.url %>"><%= book.title %></a></dt>
-        <dd><%= book.summary %></dd>
+        <dt>
+          <a href="<%= book.url %>"><%= book.title %></a>
+        </dt>
+        <dd class="genre-books"><%= book.summary %></dd>
         <%})%>
       </dl>
+      <%} else {%>
+      <h4>There are no books in this genre.</h4>
+      <%}%>
+      <hr class="hr-book" />
+      <p><a href="<%= genre.url %>/update">Update Genre</a></p>
+      <p><a href="<%= genre.url %>/delete">Delete Genre</a></p>
     </div>
-    <hr />
-    <p><a href="<%= genre.url %>/update">Update Genre</a></p>
-    <p><a href="<%= genre.url %>/delete">Delete Genre</a></p>
   </body>
 </html>

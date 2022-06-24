@@ -9,9 +9,9 @@
   </head>
   <body>
     <% include _sidebar-nav %>
-    <div>
+    <div class="main">
       <h1><%= title %></h1>
-      <ul>
+      <ul class="genre-list-ul">
         <% list_genres.forEach(genre => { %>
         <li>
           <a href="<%= genre.url %>"><%= genre.name %></a>

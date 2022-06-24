@@ -9,56 +9,55 @@
   </head>
   <body>
     <% include _sidebar-nav %>
-    <div>
+    <div class="main">
       <h1><%= title %></h1>
       <form method="post" action="">
-        <label>
-          Title:
+        <label for="title"> Title:</label>
           <input
             type="text"
-            placeholder="*Name of book:"
+            placeholder="*Name of book"
             name="title"
             required
-          />
-        </label>
-        <label>
-          Author:
+            id="title"
+          />  
+        <label for="author">
+          Author:</label>
           <input
             type="text"
-            placeholder="*Name of author:"
+            placeholder="*Name of author"
             name="author"
             required
+            id="author"
           />
         </label>
-        <label>
-          Summary:
+        <label for="summary">
+          Summary:</label>
           <input
             type="text"
-            placeholder="*Short summary of the book:"
+            placeholder="*Short summary of the book"
             name="summary"
             required
-          />
-        </label>
-        <label>
-          ISBN:
-          <input type="number" placeholder="9781455.." name="isbn" min="0" />
-        </label>
-        <label>
-          Price:
-          <input type="text" placeholder="26.50$.." name="price" />
-        </label>
-        <label>
-          Number in stock:
+            id="summary"
+          />       
+        <label for="isbn"> 
+          ISBN:</label>
+          <input type="number" placeholder="ISBN" name="isbn" min="0" id="isbn"/>       
+        <label for="price">
+          Price: </label>
+          <input type="text" placeholder="26.50$.." name="price" id="price" />       
+        <label for="numinstock">
+          Number in stock: </label>
           <input
             type="number"
             placeholder="25.."
             name="numInStock"
             min="0"
             max="100"
+            id="numinstock"
           />
-        </label>
-        <label>
-          Genre: <% genres.forEach(genre => { %>
+        <label>Genre:</label>
+        <div class="genre-list-form">
+          <% genres.forEach(genre => { %>
           <div>
             <label>
               <%= genre.name %>
@@ -66,7 +65,7 @@
             </label>
           </div>
           <%})%>
-        </label>
+        </div>
         <button type="submit">Submit</button>
       </form>
     </div>

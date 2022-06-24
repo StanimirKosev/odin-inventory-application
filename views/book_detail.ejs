@@ -9,21 +9,20 @@
   </head>
   <body>
     <% include _sidebar-nav %>
-    <div>
+    <div class="main">
       <h1><%= title %></h1>
-      <p><strong>Author: <%= book.author %></strong></p>
-      <p><strong>Summary: <%= book.summary %></strong></p>
-      <p><strong>ISBN: <%= book.isbn %></strong></p>
+      <p><strong>Author:</strong> <%= book.author %></p>
+      <p><strong>Summary:</strong> <%= book.summary %></p>
+      <p><strong>ISBN:</strong> <%= book.isbn %></p>
       <p>
-        <strong
-          >Genre: <% book.genre.forEach(val => {%> <%= val.name %> <%})%>
-        </strong>
+        <strong>Genre: </strong> <% book.genre.forEach(val => {%> <%= val.name
+        %> <%})%>
       </p>
-      <p><strong>Price: <%= book.price %></strong></p>
-      <p><strong>Number in stock: <%= book.numInStock %></strong></p>
+      <p><strong>Price:</strong> <%= book.price %></p>
+      <p><strong>Number in stock:</strong> <%= book.numInStock %></p>
+      <hr class="hr-book" />
+      <p><a href="<%= book.url %>/update">Update Book</a></p>
+      <p><a href="<%= book.url %>/delete">Delete Book</a></p>
     </div>
-    <hr />
-    <p><a href="<%= book.url %>/update">Update Book</a></p>
-    <p><a href="<%= book.url %>/delete">Delete Book</a></p>
   </body>
 </html>

@@ -9,11 +9,13 @@
   </head>
   <body>
     <% include _sidebar-nav %>
-    <div><h1><%= title %>: <%= book.title %></h1></div>
-    <p>Do you really want to delete this book?</p>
-    <form method="post" action="">
-      <input type="hidden" name="id" required value="<%= book._id %>" />
-      <button type="submit">Delete</button>
-    </form>
+    <div class="main">
+      <div><h1><%= title %>: <%= book.title %></h1></div>
+      <p>Do you really want to delete this book?</p>
+      <form method="post" action="">
+        <input type="hidden" name="id" required value="<%= book._id %>" />
+        <button type="submit">Delete</button>
+      </form>
+    </div>
   </body>
 </html>
