@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% include _sidebar-nav %>
+    <div>
+      <h1><%= title %></h1>
+      <form method="post" action="">
+        <label>
+          Title:
+          <input
+            type="text"
+            placeholder="*Name of book:"
+            name="title"
+            required
+          />
+        </label>
+        <label>
+          Author:
+          <input
+            type="text"
+            placeholder="*Name of author:"
+            name="author"
+            required
+          />
+        </label>
+        <label>
+          Summary:
+          <input
+            type="text"
+            placeholder="*Short summary of the book:"
+            name="summary"
+            required
+          />
+        </label>
+        <label>
+          ISBN:
+          <input type="number" placeholder="9781455.." name="isbn" min="0" />
+        </label>
+        <label>
+          Price:
+          <input type="text" placeholder="26.50$.." name="price" />
+        </label>
+        <label>
+          Number in stock:
+          <input
+            type="number"
+            placeholder="25.."
+            name="numInStock"
+            min="0"
+            max="100"
+          />
+        </label>
+        <label>
+          Genre: <% genres.forEach(genre => { %>
+          <div>
+            <label>
+              <%= genre.name %>
+              <input type="checkbox" name="genre" value="<%= genre._id %>" />
+            </label>
+          </div>
+          <%})%>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
